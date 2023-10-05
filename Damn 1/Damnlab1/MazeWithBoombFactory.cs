@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 using Library;
 
 
-/* MazeWithBoombFactory - это конкретная фабрика от абстрактной фабрики MazeFactory, получается нужно наследовать
-все методы создания стен, дверей и т.д. и оверайднуть два метода?*/
+
 namespace Damnlab1
 {
-    class MazeWithBoombFactory
+    class MazeWithBoombFactory : MazeFactory
     {
-        public RoomWithBoomb CreateRoom(int no)
+        public override Room CreateRoom(int no)
         {
             return new RoomWithBoomb(no);
         }
 
-        public WallWithBoomb CreateWall()
+        public override WallWithBoomb CreateWall()
         {
             return new WallWithBoomb();
         }

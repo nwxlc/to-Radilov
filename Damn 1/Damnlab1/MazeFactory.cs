@@ -9,12 +9,12 @@ namespace Damnlab1
 {
     public class MazeFactory
     {
-        public Room CreateRoom(int no)
+        public virtual Room CreateRoom(int no)
         {
             return new Room(no);
         }
 
-        public Wall CreateWall()
+        public virtual Wall CreateWall()
         {
             return new Wall();
         }
