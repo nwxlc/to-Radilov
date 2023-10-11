@@ -12,26 +12,24 @@ namespace Damnlab1
         public Maze Create(MazeFactory factory)
         {
             Maze maze = factory.CreateMaze();
-            Room _room1 = factory.CreateRoom(1);
-            Room _room2 = factory.CreateRoom(2);
-            Door _door = factory.CreateDoor(_room1, _room2);
+            Room room1 = factory.CreateRoom(1);
+            Room room2 = factory.CreateRoom(2);
+            Door door = factory.CreateDoor(room1, room2);
 
-            maze.AddRoom(_room1);
-            maze.AddRoom(_room2);
+            maze.AddRoom(room1);
+            maze.AddRoom(room2);
 
-            _room1.SetSide(Direction.North, _door);
-            _room1.SetSide(Direction.East, factory.CreateWall());
-            _room1.SetSide(Direction.South, factory.CreateWall());
-            _room1.SetSide(Direction.West, factory.CreateWall());
+            room1.SetSide(Direction.North, door);
+            room1.SetSide(Direction.East, factory.CreateWall());
+            room1.SetSide(Direction.South, factory.CreateWall());
+            room1.SetSide(Direction.West, factory.CreateWall());
 
-            _room2.SetSide(Direction.North, factory.CreateWall());
-            _room2.SetSide(Direction.East, factory.CreateWall());
-            _room2.SetSide(Direction.South, _door);
-            _room2.SetSide(Direction.West, factory.CreateWall());
+            room2.SetSide(Direction.North, factory.CreateWall());
+            room2.SetSide(Direction.East, factory.CreateWall());
+            room2.SetSide(Direction.South, door);
+            room2.SetSide(Direction.West, factory.CreateWall());
 
-            return maze
-
-
+            return maze;
 
         }
     }

@@ -8,21 +8,25 @@ namespace Library
 {
     public class Room : IMapSite
     {
-        public int Number;
-        IMapSite[] sides = new IMapSite[4];
+        public int Number { get; set; }
+        private IMapSite[] _sides = new IMapSite[4];
         public Room(int number)
         {
+            if (number <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
+            }
             Number = number;
         }
 
         public IMapSite GetSide(Direction direction)
         {
-            return sides[(int)direction];
+            return _sides[(int)direction];
         }
 
         public void SetSide(Direction direction, IMapSite side)
         {
-            sides[(int)direction] = side;
+            _sides[(int)direction] = side;
         }
 
         public virtual void Enter()

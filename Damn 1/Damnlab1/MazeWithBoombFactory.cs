@@ -16,7 +16,7 @@ namespace Damnlab1
             return new RoomWithBoomb(no);
         }
 
-        public override WallWithBoomb CreateWall()
+        public override Wall CreateWall()
         {
             return new WallWithBoomb();
         }

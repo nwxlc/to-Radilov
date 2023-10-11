@@ -8,7 +8,7 @@ namespace Library
 {
     public class Maze
     {
-        List<Room> _rooms = new List<Room>();
+        private List<Room> _rooms = new List<Room>();
 
         public void AddRoom(Room room)
         {
@@ -17,7 +17,7 @@ namespace Library
 
         public Room RoomNo(int number)
         {
-            return new Room(number);
+            return _rooms.Single(room => room.Number == number);
         }
     }
 }
