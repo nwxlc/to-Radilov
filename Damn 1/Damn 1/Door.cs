@@ -22,7 +22,7 @@ namespace Library
             this._room2 = room2;
         }
 
-        public void Enter()
+        public virtual void Enter()
         {
             if (_isOpen)
             { 

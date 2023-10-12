@@ -8,6 +8,7 @@ namespace Library
 {
     public class RoomWithBoomb : Room
     {
+        private WallWithBoomb _wallWithBoomb = new WallWithBoomb();
         private static Random _rnd = new Random();
         public RoomWithBoomb(int number) : base(number)
         { }
@@ -15,12 +16,11 @@ namespace Library
         {
             base.Enter();
             if (_rnd.Next(2) == 0)
-            { 
-                Console.WriteLine("Бомба взорвалась"); 
-                
+            {
+                Console.WriteLine("Бомба взорвалась");
+                _wallWithBoomb.Enter();
+                //Требуется обратиться к методу Enter стен (желательно не создавая экземпляр класса)
             }
         }
-
-
     }
 }

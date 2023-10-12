@@ -46,6 +46,7 @@
     <Compile Include="MazeFactory.cs" />
     <Compile Include="MazeGame.cs" />
     <Compile Include="MazeWithBoombFactory.cs" />
+    <Compile Include="MazeWithTrapFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

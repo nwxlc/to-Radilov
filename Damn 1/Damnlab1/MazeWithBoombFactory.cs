@@ -11,9 +11,9 @@ namespace Damnlab1
 {
     class MazeWithBoombFactory : MazeFactory
     {
-        public override Room CreateRoom(int no)
+        public override Room CreateRoom(int number)
         {
-            return new RoomWithBoomb(no);
+            return new RoomWithBoomb(number);
         }
 
         public override Wall CreateWall()

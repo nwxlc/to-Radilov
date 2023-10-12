@@ -24,7 +24,7 @@ namespace Damnlab1
             return new Maze();
         }
 
-        public Door CreateDoor(Room room1, Room room2)
+        public virtual Door CreateDoor(Room room1, Room room2)
         {
             return new Door(room1, room2);
         }
