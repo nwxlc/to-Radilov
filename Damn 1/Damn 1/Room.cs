@@ -9,7 +9,7 @@ namespace Library
     public class Room : IMapSite
     {
         public int Number { get; set; }
-        private IMapSite[] _sides = new IMapSite[4];
+        protected IMapSite[] sides = new IMapSite[4];
         public Room(int number)
         {
             if (number <= 0)
@@ -21,12 +21,12 @@ namespace Library
 
         public IMapSite GetSide(Direction direction)
         {
-            return _sides[(int)direction];
+            return sides[(int)direction];
         }
 
         public void SetSide(Direction direction, IMapSite side)
         {
-            _sides[(int)direction] = side;
+            sides[(int)direction] = side;
         }
 
         public virtual void Enter()

@@ -10,7 +10,7 @@ namespace Library
     {
         public override void Enter()
         {
-            Console.WriteLine("Стены взорваны");
+            Console.WriteLine("Стена взорвана");
         }
     }
 }

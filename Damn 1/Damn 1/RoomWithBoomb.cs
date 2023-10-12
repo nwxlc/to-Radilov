@@ -19,7 +19,7 @@ namespace Library
             {
                 Console.WriteLine("Бомба взорвалась");
                 _wallWithBoomb.Enter();
-                //Требуется обратиться к методу Enter стен (желательно не создавая экземпляр класса)
+                sides.OfType<WallWithBoomb>().ToList().ForEach(x => x.Enter());
             }
         }
     }
