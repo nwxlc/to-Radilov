@@ -7,7 +7,7 @@ using Library;
 
 namespace Damnlab1
 {
-    class MazeWithTrapFactory : MazeFactory
+    public class MazeWithTrapFactory : MazeFactory
     {
         public override Room CreateRoom(int Number)
         {

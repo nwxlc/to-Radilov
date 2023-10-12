@@ -8,7 +8,6 @@ namespace Library
 {
     public class RoomWithBoomb : Room
     {
-        private WallWithBoomb _wallWithBoomb = new WallWithBoomb();
         private static Random _rnd = new Random();
         public RoomWithBoomb(int number) : base(number)
         { }
@@ -18,7 +17,6 @@ namespace Library
             if (_rnd.Next(2) == 0)
             {
                 Console.WriteLine("Бомба взорвалась");
-                _wallWithBoomb.Enter();
                 sides.OfType<WallWithBoomb>().ToList().ForEach(x => x.Enter());
             }
         }
