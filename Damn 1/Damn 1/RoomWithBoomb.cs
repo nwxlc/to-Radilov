@@ -17,7 +17,7 @@ namespace Library
             if (_rnd.Next(2) == 0)
             {
                 Console.WriteLine("Бомба взорвалась");
-                sides.OfType<WallWithBoomb>().ToList().ForEach(x => x.Enter());
+                sides.OfType<WallWithBoomb>().ToList().ForEach(wall => wall.Enter());
             }
         }
     }

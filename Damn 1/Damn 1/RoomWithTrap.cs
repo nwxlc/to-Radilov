@@ -18,7 +18,8 @@ namespace Library
             if (_rnd.Next(2) == 0)
             {
                 Console.WriteLine("Сработала ловушка, дверь закрыта");
-                // Метод срабатывания Enter у DoorWithTrap
+                sides.OfType<DoorWithTrap>().ToList().ForEach(door => door.IsOpen = false);
+
             }
         }
     }
