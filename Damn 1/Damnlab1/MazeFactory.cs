@@ -19,7 +19,7 @@ namespace Damnlab1
             return new Wall();
         }
 
-        public Maze CreateMaze()
+        public virtual Maze CreateMaze()
         {
             return new Maze();
         }
