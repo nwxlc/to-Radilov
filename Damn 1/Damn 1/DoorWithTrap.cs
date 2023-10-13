@@ -11,7 +11,7 @@ namespace Library
     public class DoorWithTrap : Door
     {
 
-        public bool IsOpen { get; set; }
+        internal bool IsOpen { get; set; }
         public DoorWithTrap(Room room1, Room room2) : base(room1, room2)
         { }
 
@@ -19,7 +19,7 @@ namespace Library
         {
             if (IsOpen)
             {
-                Console.WriteLine("Дверь открыта");
+                base.Enter();
             } 
             else
             {

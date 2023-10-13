@@ -13,6 +13,10 @@ namespace Damnlab1
     {
         public override Room CreateRoom(int number)
         {
+            if (number <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
+            }
             return new RoomWithBoomb(number);
         }
 

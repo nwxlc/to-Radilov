@@ -12,10 +12,6 @@ namespace Library
         protected IMapSite[] sides = new IMapSite[4];
         public Room(int number)
         {
-            if (number <= 0)
-            {
-                throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
-            }
             Number = number;
         }
 

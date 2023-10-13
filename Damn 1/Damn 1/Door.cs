@@ -8,30 +8,19 @@ namespace Library
 {
     public class Door : IMapSite
     {
-        private bool _isOpen;
+
         private readonly Room _room1;
         private readonly Room _room2;
 
         public Door(Room room1, Room room2)
         {
-            if (room1 == null || room2 == null)
-            {
-                throw new ArgumentNullException("Ошибка null");
-            }
             this._room1 = room1;
             this._room2 = room2;
         }
 
         public virtual void Enter()
         {
-            if (_isOpen)
-            { 
-                Console.WriteLine("Дверь открыта"); 
-            }
-            else
-            {
-                Console.WriteLine("Дверь закрыта");
-            }
+            Console.WriteLine("Дверь открыта");
         }
 
         public Room OtherSideFrom(Room room)
@@ -46,7 +35,7 @@ namespace Library
             }
             else
             {
-                throw new Exception("Куда пошел"); 
+                throw new Exception("Куда пошел");
             }
         }
     }

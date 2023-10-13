@@ -11,6 +11,10 @@ namespace Damnlab1
     {
         public Maze Create(MazeFactory factory)
         {
+            if (factory = null)
+            {
+                throw new Exception("Ошибка null");
+            }
             Maze maze = factory.CreateMaze();
             Room room1 = factory.CreateRoom(1);
             Room room2 = factory.CreateRoom(2);
