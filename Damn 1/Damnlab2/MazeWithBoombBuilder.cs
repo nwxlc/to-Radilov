@@ -5,29 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using Library;
 
-
 namespace Damnlab2
 {
-    public class MazeBuilder
+    public class MazeWithBoombBuilder : MazeBuilder
     {
         private Maze _maze = new Maze();
-        public virtual void BuildRoom(int number)
+
+        public override void BuildRoom(int number)
         {
             if (number <= 0)
             {
                 throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
             }
-            Room room = new Room(number);
+            RoomWithBoomb room = new RoomWithBoomb(number);
 
-            room.SetSide(Direction.East, new Wall());
-            room.SetSide(Direction.North, new Wall());
-            room.SetSide(Direction.South, new Wall());
-            room.SetSide(Direction.West, new Wall());
+            room.SetSide(Direction.East, new WallWithBoomb());
+            room.SetSide(Direction.North, new WallWithBoomb());
+            room.SetSide(Direction.South, new WallWithBoomb());
+            room.SetSide(Direction.West, new WallWithBoomb());
 
             _maze.AddRoom(room);
         }
 
-        public virtual void BuildDoor(int roomNumber1, int roomNumber2)
+        public override void BuildDoor(int roomNumber1, int roomNumber2)
         {
             if (roomNumber1 <= 0)
             {
@@ -40,12 +40,12 @@ namespace Damnlab2
             Room room1 = _maze.RoomNo(roomNumber1);
             Room room2 = _maze.RoomNo(roomNumber2);
             Door door = new Door(room1, room2);
-            //Расположение дверей у комнат//
+            //Можно ли просто base.BuildDoor();
 
 
         }
 
-        public virtual Maze GetMaze()
+        public override Maze GetMaze()
         {
             return _maze;
         }

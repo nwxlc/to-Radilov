@@ -11,7 +11,7 @@ namespace Damnlab1
     {
         public Maze Create(MazeFactory factory)
         {
-            if (factory = null)
+            if (factory == null)
             {
                 throw new Exception("Ошибка null");
             }

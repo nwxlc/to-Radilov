@@ -17,7 +17,7 @@ namespace Library
             
             if (room1 == null)
             {
-                throw new ArgumentNullException(nameof(room1), "Ошибка null ");
+                throw new ArgumentNullException(nameof(room1), "Ошибка   null ");
             }
             if (room2 == null)
             {

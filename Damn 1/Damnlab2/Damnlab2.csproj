@@ -44,11 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MazeBuilder.cs" />
+    <Compile Include="MazeGame.cs" />
+    <Compile Include="MazeWithBoombBuilder.cs" />
+    <Compile Include="MazeWithTrapBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Damn 1\Library.csproj">
+      <Project>{1b1fdcdf-da83-4fe0-a6bd-299778bd10ec}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

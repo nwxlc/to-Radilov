@@ -31,7 +31,7 @@ namespace Damnlab1
         public virtual Door CreateDoor(Room room1, Room room2)
         {
 
-            iif(room1 == null)
+            if(room1 == null)
             {
                 throw new ArgumentNullException(nameof(room1), "Ошибка null ");
             }
