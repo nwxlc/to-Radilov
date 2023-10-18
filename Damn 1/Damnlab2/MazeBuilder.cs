@@ -17,7 +17,7 @@ namespace Damnlab2
             {
                 throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
             }
-            Room room = new Room(number);
+            Room room = CreateRoom(number);
 
             room.SetSide(Direction.East, new Wall());
             room.SetSide(Direction.North, new Wall());
@@ -39,17 +39,17 @@ namespace Damnlab2
             }
             Room room1 = _maze.RoomNo(roomNumber1);
             Room room2 = _maze.RoomNo(roomNumber2);
-            Door door = new Door(room1, room2);
-            var tuple = FindWall(room1, room2);
-            room1.SetSide(tuple.Item1, door);
-            room2.SetSide(tuple.Item2, door);
+            Door door = CreateDoor(room1, room2);
+            var (direction1, direction2) = FindWall(room1, room2);
+            room1.SetSide(direction1, door);
+            room2.SetSide(direction2, door);   
         }
 
         public virtual Maze GetMaze()
         {
             return _maze;
         }
-        public static (Direction, Direction) FindWall(Room room1, Room room2)
+        protected static (Direction, Direction) FindWall(Room room1, Room room2)
         {
             if (room1 == null)
             {
@@ -60,6 +60,28 @@ namespace Damnlab2
                 throw new ArgumentNullException(nameof(room2), "Ошибка null");
             }
             return (Direction.North, Direction.South);
+        }
+
+        protected virtual Room CreateRoom(int number)
+        {
+            if (number <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), "Номер комнаты не соответствует условию");
+            }
+            return new Room(number);
+        }
+        protected virtual Door CreateDoor(Room room1, Room room2)
+        {
+
+            if (room1 == null)
+            {
+                throw new ArgumentNullException(nameof(room1), "Ошибка null ");
+            }
+            if (room2 == null)
+            {
+                throw new ArgumentNullException(nameof(room2), "Ошибка null");
+            }
+            return new Door(room1, room2);
         }
     }
 }

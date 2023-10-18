@@ -17,7 +17,7 @@ namespace Damnlab2
             {
                 throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
             }
-            RoomWithBoomb room = new RoomWithBoomb(number);
+            RoomWithBoomb room = CreateRoom(number);
 
             room.SetSide(Direction.East, new WallWithBoomb());
             room.SetSide(Direction.North, new WallWithBoomb());
@@ -26,25 +26,10 @@ namespace Damnlab2
 
             _maze.AddRoom(room);
         }
-
-        public override void BuildDoor(int roomNumber1, int roomNumber2)
+        protected override RoomWithBoomb CreateRoom(int number)
         {
-            if (roomNumber1 <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(roomNumber1), "Номер комнаты не соответствует условию");
-            }
-            if (roomNumber2 <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(roomNumber2), "Номер комнаты не соответствует условию");
-            }
-            Room room1 = _maze.RoomNo(roomNumber1);
-            Room room2 = _maze.RoomNo(roomNumber2);
-            Door door = new Door(room1, room2);
-            var tuple = FindWall(room1, room2);
-            room1.SetSide(tuple.Item1, door);
-            room2.SetSide(tuple.Item2, door);
+            return new RoomWithBoomb(number);
         }
-
         public override Maze GetMaze()
         {
             return _maze;
