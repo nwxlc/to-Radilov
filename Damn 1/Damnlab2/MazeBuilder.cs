@@ -40,14 +40,26 @@ namespace Damnlab2
             Room room1 = _maze.RoomNo(roomNumber1);
             Room room2 = _maze.RoomNo(roomNumber2);
             Door door = new Door(room1, room2);
-            //Расположение дверей у комнат//
-
-
+            var tuple = FindWall(room1, room2);
+            room1.SetSide(tuple.Item1, door);
+            room2.SetSide(tuple.Item2, door);
         }
 
         public virtual Maze GetMaze()
         {
             return _maze;
+        }
+        public static (Direction, Direction) FindWall(Room room1, Room room2)
+        {
+            if (room1 == null)
+            {
+                throw new ArgumentNullException(nameof(room1), "Ошибка null");
+            }
+            if (room2 == null)
+            {
+                throw new ArgumentNullException(nameof(room2), "Ошибка null");
+            }
+            return (Direction.North, Direction.South);
         }
     }
 }

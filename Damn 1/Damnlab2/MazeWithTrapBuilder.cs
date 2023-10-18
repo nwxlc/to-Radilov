@@ -40,13 +40,15 @@ namespace Damnlab2
             Room room1 = _maze.RoomNo(roomNumber1);
             Room room2 = _maze.RoomNo(roomNumber2);
             DoorWithTrap door = new DoorWithTrap(room1, room2);
-            //
-
+            var tuple = FindWall(room1, room2);
+            room1.SetSide(tuple.Item1, door);
+            room2.SetSide(tuple.Item2, door);
         }
 
         public override Maze GetMaze()
         {
             return _maze;
         }
+        
     }
 }
