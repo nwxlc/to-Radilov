@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library
+namespace Damnlab4
 {
-    public interface IMapSite
+    class Program
     {
-        void Enter();
-        
-
+        static void Main(string[] args)
+        {
+        }
     }
 }

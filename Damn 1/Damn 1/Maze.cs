@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    public class Maze
+    public class Maze 
     {
         private List<Room> _rooms = new List<Room>();
 
@@ -18,6 +18,11 @@ namespace Library
         public Room RoomNo(int number)
         {
             return _rooms.Single(room => room.Number == number);
+        }
+
+        public Maze Clone()
+        {
+            return (Maze)this.MemberwiseClone();
         }
     }
 }

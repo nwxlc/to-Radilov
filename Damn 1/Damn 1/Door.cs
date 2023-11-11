@@ -47,5 +47,10 @@ namespace Library
                 throw new Exception("Куда пошел");
             }
         }
+
+        public Door Clone()
+        {
+            return (Door)this.MemberwiseClone();
+        }
     }
 }

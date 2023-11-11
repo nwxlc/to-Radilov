@@ -26,7 +26,7 @@ namespace Damnlab2
 
             _maze.AddRoom(room);
         }
-        protected override RoomWithBoomb CreateRoom(int number)
+        protected override Room CreateRoom(int number)
         {
             return new RoomWithBoomb(number);
         }

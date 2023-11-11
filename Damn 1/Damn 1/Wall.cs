@@ -10,7 +10,12 @@ namespace Library
     {
         public virtual void Enter()
         {
-            Console.WriteLine("Прохода нет");
+            Console.WriteLine("Вы врезались в стену");
+        }
+
+        public Wall Clone()
+        {
+            return (Wall)this.MemberwiseClone();
         }
     }
 }
