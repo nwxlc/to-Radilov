@@ -34,6 +34,11 @@ namespace Library
             Console.WriteLine("Вошли в комнату");
         }
 
+        public void Initialize(int roomNumber)
+        {
+            Number = roomNumber;
+        }
+
         public Room Clone()
         {
             return (Room)this.MemberwiseClone();

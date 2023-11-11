@@ -34,8 +34,20 @@ namespace Damnlab4
             {
                 throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
             }
-            room.Number = roomNumber;
+            room.Initialize(roomNumber);
             return room;
+        }
+        public override Wall CreateWall()
+        {
+            Wall wall = _prototypeWall.Clone();
+            return wall;
+        }
+        public override Door CreateDoor(Room room1, Room room2)
+        {
+            Door door = _prototypeDoor.Clone();
+            door.Initialize(room1, room2);
+            return door;
+             
         }
     }
 }
