@@ -20,5 +20,9 @@ namespace Library
                 sides.OfType<WallWithBoomb>().ToList().ForEach(wall => wall.Enter());
             }
         }
+        public override Room Clone()
+        {
+            return (RoomWithBoomb)this.MemberwiseClone();
+        }
     }
 }

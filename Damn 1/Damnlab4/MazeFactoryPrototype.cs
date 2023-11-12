@@ -8,7 +8,7 @@ using Damnlab1;
 
 namespace Damnlab4
 {
-    class MazeFactoryPrototype : MazeFactory
+    internal class MazeFactoryPrototype : MazeFactory
     {
         private Maze _prototypeMaze;
         private Room _prototypeRoom;

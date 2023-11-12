@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="IMazeFactory.cs" />
     <Compile Include="MazeFactoryPrototype.cs" />
+    <Compile Include="MazeFactoryWithBoombPrototype.cs" />
+    <Compile Include="MazeFactoryWithTrapPrototype.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace Library
             Console.WriteLine("Вы врезались в стену");
         }
 
-        public Wall Clone()
+        public virtual Wall Clone()
         {
             return (Wall)this.MemberwiseClone();
         }

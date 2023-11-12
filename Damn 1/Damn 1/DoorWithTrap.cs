@@ -26,5 +26,10 @@ namespace Library
                 Console.WriteLine("Дверь закрылась, прохода нет");
             }
         }
+
+        public override Door Clone()
+        {
+            return (DoorWithTrap)this.MemberwiseClone();
+        }
     }
 }

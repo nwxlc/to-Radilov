@@ -53,7 +53,7 @@ namespace Library
             }
         }
 
-        public Door Clone()
+        public virtual Door Clone()
         {
             return (Door)this.MemberwiseClone();
         }

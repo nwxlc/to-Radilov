@@ -12,5 +12,9 @@ namespace Library
         {
             Console.WriteLine("Стена взорвана");
         }
+        public override Wall Clone()
+        {
+            return (WallWithBoomb)this.MemberwiseClone();
+        }
     }
 }

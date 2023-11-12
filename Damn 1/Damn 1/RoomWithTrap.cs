@@ -19,8 +19,12 @@ namespace Library
             {
                 Console.WriteLine("Сработала ловушка, дверь закрыта");
                 sides.OfType<DoorWithTrap>().ToList().ForEach(door => door.IsOpen = false);
-
             }
+        }
+
+        public override Room Clone()
+        {
+            return (RoomWithTrap)this.MemberwiseClone();
         }
     }
 }

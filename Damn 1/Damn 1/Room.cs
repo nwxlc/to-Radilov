@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    public class Room : IMapSite //, ICloneable<Room>
+    public class Room : IMapSite
     {
         public int Number { get; set; }
         protected IMapSite[] sides = new IMapSite[4];
@@ -39,7 +39,7 @@ namespace Library
             Number = roomNumber;
         }
 
-        public Room Clone()
+        public virtual Room Clone()
         {
             return (Room)this.MemberwiseClone();
         }
