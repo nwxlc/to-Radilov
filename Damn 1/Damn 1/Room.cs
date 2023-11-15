@@ -19,6 +19,10 @@ namespace Library
             Number = number;
         }
 
+        public Room()
+        {
+        }
+
         public IMapSite GetSide(Direction direction)
         {
             return sides[(int)direction];

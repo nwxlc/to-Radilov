@@ -32,6 +32,9 @@ namespace Library
             this._room2 = room2;
         }
 
+        public Door() { }
+        
+
         public virtual void Enter()
         {
             Console.WriteLine("Дверь открыта");

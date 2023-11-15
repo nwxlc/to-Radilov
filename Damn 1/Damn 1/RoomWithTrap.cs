@@ -21,7 +21,9 @@ namespace Library
                 sides.OfType<DoorWithTrap>().ToList().ForEach(door => door.IsOpen = false);
             }
         }
-
+        public RoomWithTrap()
+        {
+        }
         public override Room Clone()
         {
             return (RoomWithTrap)this.MemberwiseClone();

@@ -15,12 +15,20 @@ namespace Damnlab4
         private Door _prototypeDoor;
         private Wall _prototypeWall;
 
-        public MazeFactoryPrototype(Maze maze, Wall wall, Room room, Door door)
+        protected MazeFactoryPrototype(Maze maze, Wall wall, Room room, Door door)
         {
             _prototypeDoor = door;
             _prototypeMaze = maze;
             _prototypeRoom = room;
             _prototypeWall = wall;
+        }
+        
+        public MazeFactoryPrototype()
+        {
+            _prototypeDoor = new Door();
+            _prototypeMaze = new Maze();
+            _prototypeRoom = new Room();
+            _prototypeWall = new Wall();
         }
 
         public override Maze CreateMaze()
@@ -46,8 +54,7 @@ namespace Damnlab4
         {
             Door door = _prototypeDoor.Clone();
             door.Initialize(room1, room2);
-            return door;
-             
+            return door;        
         }
     }
 }

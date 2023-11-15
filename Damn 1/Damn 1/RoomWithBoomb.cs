@@ -10,7 +10,9 @@ namespace Library
     {
         private static Random _rnd = new Random();
         public RoomWithBoomb(int number) : base(number)
-        { }
+        {
+            
+        }
         public override void Enter()
         {
             base.Enter();
