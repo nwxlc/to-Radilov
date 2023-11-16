@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMazeFactory.cs" />
     <Compile Include="MazeFactoryPrototype.cs" />
     <Compile Include="MazeFactoryWithBoombPrototype.cs" />
     <Compile Include="MazeFactoryWithTrapPrototype.cs" />
