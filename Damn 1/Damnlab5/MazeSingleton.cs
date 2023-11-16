@@ -10,16 +10,18 @@ namespace Damnlab5
 {
     public class MazeSingleton : MazeFactory
     {
-        private static MazeSingleton instance;
+        private static MazeSingleton _instance;
 
         private MazeSingleton()
         { }
 
-        public static MazeSingleton getInstance()
+        public static MazeSingleton GetInstance()
         {
-            if (instance == null)
-                instance = new MazeSingleton();
-            return instance;
+            if (_instance == null)
+            {
+                _instance = new MazeSingleton();
+            }
+            return _instance;
         }
     }
 }

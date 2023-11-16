@@ -10,16 +10,18 @@ namespace Damnlab5
 {
     class MazeWithBoombSingleton : MazeWithBoombFactory
     {
-        private static MazeWithBoombSingleton instance;
+        private static MazeWithBoombSingleton _instance;
 
         private MazeWithBoombSingleton()
         { }
 
-        public static MazeWithBoombSingleton getInstance()
+        public static MazeWithBoombSingleton GetInstance()
         {
-            if (instance == null)
-                instance = new MazeWithBoombSingleton();
-            return instance;
+            if (_instance == null)
+            {
+                _instance = new MazeWithBoombSingleton();
+            }
+            return _instance;
         }
     }
 }
