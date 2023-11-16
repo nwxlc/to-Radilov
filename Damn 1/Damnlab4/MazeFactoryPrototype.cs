@@ -22,13 +22,9 @@ namespace Damnlab4
             _prototypeRoom = room;
             _prototypeWall = wall;
         }
-        
-        public MazeFactoryPrototype()
+
+        public MazeFactoryPrototype() : this (new Maze(), new Wall(), new Room(), new Door())
         {
-            _prototypeDoor = new Door();
-            _prototypeMaze = new Maze();
-            _prototypeRoom = new Room();
-            _prototypeWall = new Wall();
         }
 
         public override Maze CreateMaze()
